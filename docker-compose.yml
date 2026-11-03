@@ -5,6 +5,7 @@ services:
     container_name: goof
     environment:
       - DOCKER=1
+      - AIKIDO_TOKEN=
     ports:
       - "3001:3001"
       - "9229:9229"
