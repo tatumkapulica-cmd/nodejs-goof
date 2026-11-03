@@ -2,6 +2,8 @@
  * Module dependencies.
  */
 
+const Zen = require('@aikidosec/firewall');
+
 // mongoose setup
 require('./mongoose-db');
 require('./typeorm-db')
@@ -50,6 +52,7 @@ app.use(fileUpload());
 
 // Routes
 app.use(routes.current_user);
+Zen.addExpressMiddleware(app);
 app.get('/', routes.index);
 app.get('/login', routes.login);
 app.post('/login', routes.loginHandler);
